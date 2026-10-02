@@ -204,7 +204,7 @@ button[type="reset"]:hover {
 }
 
 footer {
-    background-color: #1e293b;
+    background: linear-gradient(135deg, #b174e0, #8a00c5);
     color: white;
     text-align: center;
     padding: 20px;
