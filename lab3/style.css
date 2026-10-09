@@ -11,7 +11,7 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(135deg, #5146c8, #8175ed);
+  background: linear-gradient(135deg, #6b46c8, #e375edc6);
   color: white;
   padding: 28px 20px;
   text-align: center;
@@ -185,12 +185,12 @@ tbody tr:nth-child(even) {
 }
 
 .btn-submit {
-  background-color: #5b50d6;
+  background-color: #a16fd0;
   color: white;
 }
 
 .btn-submit:hover {
-  background-color: #4438b5;
+  background-color: #a16fd0;
 }
 
 .btn-reset {
@@ -230,7 +230,7 @@ tbody tr:nth-child(even) {
 
 footer {
   text-align: center;
-  background-color: #242943;
+  background: linear-gradient(135deg, #6b46c8, #e375edc6);
   color: white;
   padding: 22px;
   margin-top: 40px;
