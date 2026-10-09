@@ -1,250 +1,282 @@
+
+/* 1. Үндсэн загвар */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f3f5fb;
+  color: #29324a;
+  line-height: 1.7;
 }
 
-header {
-    background: linear-gradient(135deg, #b174e0, #8a00c5);
-    color: white;
-    text-align: center;
-    padding: 25px 20px;
+/* 2. Header болон navigation */
+.site-header {
+  background: linear-gradient(135deg, #5146c8, #8175ed);
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
 }
 
-header h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
+.main-title {
+  margin: 0 0 15px;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
 }
 
-nav ul li a:hover {
-    color: #8a00c56a;
-    text-decoration: underline;
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* 3. Үндсэн агуулга */
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 35px auto;
+  padding: 0 20px;
 }
 
 article {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 section {
-    margin-bottom: 35px;
+  background-color: white;
+  padding: 26px;
+  margin-bottom: 0;
+  border: 1px solid #e2e6f0;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(44, 53, 95, 0.06);
 }
 
 section h2 {
-    color: #8a00c5;
-    font-size: 22px;
-    border-bottom: 2px solid #f3dbfe;
-    padding-bottom: 10px;
-    margin-bottom: 18px;
+  color: #5146c8;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
-section p {
-    margin-bottom: 20px;
-    color: #666;
+.section-title {
+  font-size: 25px;
+  font-weight: 800;
 }
 
+.form-description {
+  color: #6e7690;
+  margin-bottom: 24px;
+}
+
+/* 4. Сонирхлын жагсаалт */
 section ul {
-    padding-left: 25px;
+  padding-left: 24px;
 }
 
-section ul li {
-    margin: 8px 0;
+section li {
+  margin-bottom: 6px;
 }
 
+/* 5. Хүснэгт */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  border: 1px solid #e1e5ef;
+  padding: 12px 15px;
+  text-align: left;
 }
 
 th {
-    background-color: #8a00c5;
-    color: white;
-    padding: 13px;
-}
-
-td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
+  background-color: #eeeaff;
+  color: #5146c8;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f6efff;
+  background-color: #f8f8ff;
 }
 
-tbody tr:hover {
-    background-color: #f3d7ff3a;
-    transition: 0.3s;
+/* 6. Form болон Box Model */
+.student-form {
+  width: 100%;
 }
 
-form {
-    margin-top: 20px;
+.form-group {
+  position: relative;
+  border: 1px solid #dfe2f0;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 0 0 24px;
+  min-width: 0;
 }
 
-fieldset {
-    border: 1px solid #d8cbe1;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-    background-color: #fdfaff;
+.form-group legend {
+  color: #5146c8;
+  font-size: 17px;
+  font-weight: 800;
+  padding: 0 10px;
 }
 
-legend {
-    color: #8a00c5;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 0 10px;
+/* Class сонгогч ашиглан талбаруудыг загварчлах */
+.student-form input:not([type="radio"]):not([type="checkbox"]),
+.student-form select,
+.student-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border: 1px solid #cfd4e4;
+  border-radius: 9px;
+  background-color: #fbfcff;
+  color: #29324a;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-label {
-    font-weight: 600;
-    color: #0000007f;
+.student-form input:focus,
+.student-form select:focus,
+.student-form textarea:focus {
+  outline: none;
+  border-color: #7165e8;
+  box-shadow: 0 0 0 3px rgba(113, 101, 232, 0.15);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 7px;
-    border: 1px solid #911ac5bf;
-    border-radius: 6px;
-    font-size: 15px;
-    background-color: white;
-    outline: none;
-    transition: 0.3s;
+.student-form input[type="radio"],
+.student-form input[type="checkbox"] {
+  accent-color: #6357d5;
+  margin-right: 7px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #8a00c5;
-    box-shadow: 0 0 5px rgba(138, 0, 197, 0.3);
+.student-form input[type="file"] {
+  padding: 10px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    accent-color: #8a00c5;
-    margin: 10px 5px;
-    cursor: pointer;
+.student-form textarea {
+  resize: vertical;
 }
 
-input[type="file"] {
-    margin-top: 10px;
-    padding: 10px;
+/* 7. Товчнууд */
+.btn {
+  padding: 12px 22px;
+  margin: 5px 8px 5px 0;
+  border: none;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-textarea {
-    resize: vertical;
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.btn-submit {
+  background-color: #5b50d6;
+  color: white;
 }
 
-button[type="submit"] {
-    background-color: #8a00c5;
-    color: white;
+.btn-submit:hover {
+  background-color: #4438b5;
 }
 
-button[type="submit"]:hover {
-    background-color: #6c0099;
-    transform: translateY(-2px);
+.btn-reset {
+  background-color: #e9eaf3;
+  color: #454c63;
 }
 
-button[type="reset"] {
-    background-color: #e5e7eb;
-    color: #374151;
-    margin-left: 10px;
+.btn-reset:hover {
+  background-color: #d9dbea;
 }
 
-button[type="reset"]:hover {
-    background-color: #cbd5e1;
+/* 8. Position: relative / absolute */
+.form-hint {
+  position: relative;
+  background-color: #f0efff;
+  border-left: 4px solid #7165e8;
+  border-radius: 8px;
+  padding: 20px 14px 10px;
+  margin-bottom: 24px;
 }
 
+.form-hint p {
+  margin: 0;
+  color: #5146c8;
+}
+
+.hint-badge {
+  position: absolute;
+  top: -13px;
+  right: 12px;
+  background-color: #5146c8;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* 9. Footer */
 footer {
-    background: linear-gradient(135deg, #b174e0, #8a00c5);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 14px;
+  text-align: center;
+  background-color: #242943;
+  color: white;
+  padding: 22px;
+  margin-top: 40px;
 }
 
+footer p {
+  margin: 0;
+}
+
+/* 10. Гар утасны дэлгэц */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 22px;
-    }
+  .main-title {
+    font-size: 23px;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+  main {
+    padding: 0 12px;
+    margin: 20px auto;
+  }
 
-    main {
-        padding: 0 10px;
-        margin: 15px auto;
-    }
+  section {
+    padding: 18px;
+  }
 
-    article {
-        padding: 18px;
-    }
+  .form-group {
+    padding: 18px;
+  }
 
-    fieldset {
-        padding: 15px;
-    }
+  .btn {
+    width: 100%;
+    margin: 6px 0;
+  }
 
-    button {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    button[type="reset"] {
-        margin-left: 0;
-    }
-
-    table {
-        font-size: 14px;
-    }
+  th,
+  td {
+    padding: 9px;
+  }
 }

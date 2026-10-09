@@ -1,15 +1,21 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE html> 
 <html lang="mn"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Лаборатори 02: Хэрэглэгчийн анкет</title> 
-</head> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
 <body> 
  
-  <header> 
-    <h1>Оюутны Бүртгэлийн Портал</h1> 
+  <header class="site-header">
+    <h1 class="main-title">Оюутны Бүртгэлийн Портал</h1>
     <nav> 
       <ul> 
         <li><a href="../index.html">Нүүр</a></li> 
@@ -56,12 +62,18 @@
         </table> 
     </section> 
       <section> 
-        <h2>Хэрэглэгчийн Анкет Бөглөх</h2> 
-        <p>Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв зааж бөглөнө үү.</p> 
-  
-         <form action="#" method="POST" enctype="multipart/form-data"> 
-  
-        <fieldset> 
+        <h2 class="section-title">Хэрэглэгчийн Анкет Бөглөх</h2>
+
+        <p class="form-description">
+          <div class="form-hint">
+            <span class="hint-badge">Зөвлөгөө</span>
+            <p>Мэдээллээ үнэн зөв оруулна уу.</p>
+          </div>        
+        </p>
+        <form class="student-form" action="#" method="POST"
+              enctype="multipart/form-data">
+
+          <fieldset class="form-group">
             <legend>Хувийн мэдээлэл</legend> 
         
             <label for="fullname">Овог нэр:</label><br> 
@@ -120,8 +132,13 @@
         
         <br> 
         
-        <button type="submit">Анкет Илгээх</button> 
-        <button type="reset">Дахин эхлүүлэх</button> 
+        <button type="submit" class="btn btn-submit">
+          Анкет Илгээх
+        </button>
+
+        <button type="reset" class="btn btn-reset">
+          Дахин эхлүүлэх
+        </button> 
         </form>
       </section> 
     </article> 
