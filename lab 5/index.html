@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyWebsite</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="#">MyWebsite</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Цэс нээх" aria-expanded="false" aria-controls="mainNav">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <nav id="mainNav" aria-label="Үндсэн цэс">
+      <ul>
+        <li><a class="active" href="#">Нүүр</a></li>
+        <li><a href="#">Бидний тухай</a></li>
+        <li><a href="#">Үйлчилгээ</a></li>
+        <li><a href="#">Холбоо барих</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Миний веб хуудсанд тавтай морил!</h1>
+      <p>Арьсны өнгө, үс, нүдний өнгөндөө тохирсон хувийн өнгөний палитраа олж, өөртөө зохицох өнгөнүүдийг нээгээрэй.</p>
+      <a class="btn" href="#">Дэлгэрэнгүй</a>
+    </div>
+  </section>
+
+  <section class="seasons">
+    <div class="container">
+      <h2>Өнгөний 4 улирал</h2>
+      <div class="grid">
+        <div class="card spring">Хавар</div>
+        <div class="card summer">Зун</div>
+        <div class="card autumn">Намар</div>
+        <div class="card winter">Өвөл</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 MyWebsite | Лаборатори 5</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Цэс хаах' : 'Цэс нээх');
+  });
+
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+</body>
+</html>
