@@ -22,7 +22,6 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -150,10 +149,7 @@ footer a { color: var(--text); }
 
 @media (max-width: 1200px) {
   .container { padding: 0 32px; }
-
-
   nav ul { gap: 28px; }
-
   .hero { padding: 72px 0 64px; }
   .hero h1 { font-size: 2.3rem; }
   .hero p { font-size: 1.15rem; max-width: 90%; }
@@ -192,9 +188,6 @@ footer a { color: var(--text); }
 
 @media (max-width: 800px) {
   .container { padding: 0 16px; }
-
-
-
   .logo { font-size: 1.2rem; }
   nav ul { padding: 8px 16px 12px; }
 
