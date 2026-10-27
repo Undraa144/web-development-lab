@@ -33,7 +33,7 @@ function applyTheme(theme) {
 }
 
 let saved = null;
-try { saved = localStorage.getItem('theme'); } catch (e) {}
+try { saved = localStorage.getItem('theme'); } catch (e) { }
 applyTheme(saved || (media.matches ? 'dark' : 'light'));
 
 themeBtn.addEventListener('click', () => {
@@ -42,34 +42,34 @@ themeBtn.addEventListener('click', () => {
   try { localStorage.setItem('theme', next); } catch (e) { }
 });
 
-const cards = document.querySelectorAll('.flip');
-const flipAllBtn = document.getElementById('flipAll');
-
-const sectionCards = flipAllBtn.closest('section').querySelectorAll('.flip');
-
 function setFlipped(card, flipped) {
   card.classList.toggle('is-flipped', flipped);
   card.querySelector('.flip-btn').setAttribute('aria-pressed', flipped);
-
   card.querySelector('.front').setAttribute('aria-hidden', flipped);
   card.querySelector('.back').setAttribute('aria-hidden', !flipped);
 }
 
-cards.forEach(card => {
+document.querySelectorAll('.flip').forEach(card => {
   card.querySelector('.flip-btn').addEventListener('click', () => {
     setFlipped(card, !card.classList.contains('is-flipped'));
-    syncFlipAll();
+    const section = card.closest('section');
+    const btn = section.querySelector('[data-flip-all]');
+    if (btn) syncFlipAll(btn, section);
   });
 });
 
-function syncFlipAll() {
-  const all = [...sectionCards].every(c => c.classList.contains('is-flipped'));
-  flipAllBtn.setAttribute('aria-pressed', all);
-  flipAllBtn.textContent = all ? 'Бүгдийг буцаах' : 'Бүгдийг эргүүлэх';
+function syncFlipAll(btn, section) {
+  const cards = section.querySelectorAll('.flip');
+  const all = [...cards].every(c => c.classList.contains('is-flipped'));
+  btn.setAttribute('aria-pressed', all);
+  btn.textContent = all ? 'Бүгдийг буцаах' : 'Бүгдийг эргүүлэх';
 }
 
-flipAllBtn.addEventListener('click', () => {
-  const target = flipAllBtn.getAttribute('aria-pressed') !== 'true';
-  sectionCards.forEach(c => setFlipped(c, target));
-  syncFlipAll();
+document.querySelectorAll('[data-flip-all]').forEach(btn => {
+  const section = btn.closest('section');
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('aria-pressed') !== 'true';
+    section.querySelectorAll('.flip').forEach(c => setFlipped(c, target));
+    syncFlipAll(btn, section);
+  });
 });

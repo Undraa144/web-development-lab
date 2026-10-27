@@ -57,7 +57,8 @@
     <div class="container">
       <div class="section-head">
         <h2 id="galleryTitle">Өнгөний 4 улирал</h2>
-        <button class="btn btn-small" id="flipAll" type="button" aria-pressed="false">Бүгдийг эргүүлэх</button>
+        <p class="season-intro">Өнгөний 4 улирал нь хүний арьс, үс, нүдний өнгийг хавар, зун, намар, өвөл гэсэн дөрвөн бүлэгт ангилж, аль өнгө хэнд хамгийн сайн зохицохыг тодорхойлдог систем юм. Улирал бүр дулаан эсвэл хүйтэн, тод эсвэл зөөлөн, цайвар эсвэл гүн гэсэн шинжээрээ ялгагдана.</p>
+        <button class="btn btn-small" data-flip-all type="button" aria-pressed="false">Бүгдийг эргүүлэх</button>
       </div>
 
       <ul class="photo-grid">
@@ -133,6 +134,9 @@
     <div class="container">
       <h2 id="undertoneTitle">Ундертон гэж юу вэ?</h2>
       <p class="undertone-intro">Ундертон нь арьсны гадаргуугийн доорх суурь өнгө бөгөөд улирлаас тусдаа ойлголт. Ундертоноо мэдвэл алт эсвэл мөнгө, ямар өнгө илүү зохицохыг тодорхойлоход хялбар.</p>
+      <div class="flip-all-wrap">
+        <button class="btn btn-small" data-flip-all type="button" aria-pressed="false">Бүгдийг эргүүлэх</button>
+      </div>
       <ul class="photo-grid photo-grid-sm">
         <li class="flip" style="--i:0">
           <div class="flip-inner">
@@ -220,7 +224,7 @@
 
   <section class="map" id="map" aria-labelledby="mapTitle">
     <div class="container">
-      <h2 id="mapTitle">Байршил</h2>
+      <h2 id="mapTitle">Холбоо барих · Байршил</h2>
       <div class="map-wrap">
         <iframe
           title="Улаанбаатар хотын байршлын газрын зураг"
